@@ -1,18 +1,25 @@
-import { ModuleWithProviders, NgModule, Type } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
 
 const matModules = [
   MatCardModule,  
   MatTableModule,
   MatIconModule,
   MatButtonModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatListModule,
 ];
 
 
