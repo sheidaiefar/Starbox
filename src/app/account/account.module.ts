@@ -4,8 +4,7 @@ import { LoginComponent } from './account-pages/login/login.component';
 import { SignupComponent } from './account-pages/signup/signup.component';
 import { AccountLayoutModule } from './account-layout/account-layout.module';
 import { AccountRoutingModule } from './account-routing.module';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +15,8 @@ import { AccountRoutingModule } from './account-routing.module';
   imports: [
     CommonModule,
     AccountLayoutModule,
-    AccountRoutingModule
+    AccountRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class AccountModule { }

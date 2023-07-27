@@ -8,11 +8,12 @@ import { MaterialsModule } from './core/modules/materials/materials.module';
 import { WorkSpaceModule } from './work-space/work-space.module';
 import { PublicModule } from './public/public.module';
 import { AccountModule } from './account/account.module';
+import { fakeBackendProvider } from './core/auth/fake-backend';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,9 +21,11 @@ import { AccountModule } from './account/account.module';
     MaterialsModule,
     WorkSpaceModule,
     AccountModule,
-    PublicModule
+    PublicModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [fakeBackendProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
