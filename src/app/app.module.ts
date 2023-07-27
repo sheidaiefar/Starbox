@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './core/modules/materials/materials.module';
 import { WorkSpaceModule } from './work-space/work-space.module';
-import { AccountModule } from './access/access.module';
 import { PublicModule } from './public/public.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [

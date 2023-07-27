@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PublicLayoutComponent } from './public/public-layout/public-layout/public-layout.component';
 import { PublicHomeComponent } from './public/public-pages/public-home/public-home.component';
 import { WorkSpaceLayoutComponent } from './work-space/work-space-layout/work-space-layout/work-space-layout.component';
-import { AccessLayoutComponent } from './access/access-layout/access-layout/access-layout.component';
+import { AccountLayoutComponent } from './account/account-layout/account-layout/account-layout.component';
 
 const routes: Routes = [
   {
@@ -25,9 +25,9 @@ const routes: Routes = [
   },
   {
     path: 'access',
-    component: AccessLayoutComponent,
+    component: AccountLayoutComponent,
     loadChildren: () =>
-      import('./access/access.module').then((x) => x.AccountModule),
+      import('./account/account.module').then((x) => x.AccountModule),
   },
   {
     path: 'work-space',
