@@ -1,13 +1,12 @@
-import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-public-layout',
+  templateUrl: './public-layout.component.html',
+  styleUrls: ['./public-layout.component.css']
 })
-export class AppComponent {
-  title = 'starbox';
+export class PublicLayoutComponent {
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
