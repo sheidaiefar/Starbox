@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './core/modules/materials/materials.module';
 import { WorkSpaceModule } from './work-space/work-space.module';
-import { AccessModule } from './access/access.module';
+import { AccountModule } from './access/access.module';
 import { PublicModule } from './public/public.module';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { PublicModule } from './public/public.module';
     BrowserAnimationsModule,
     MaterialsModule,
     WorkSpaceModule,
-    AccessModule,
+    AccountModule,
     PublicModule
   ],
   providers: [],

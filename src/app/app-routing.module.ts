@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'access',
     component: AccessLayoutComponent,
     loadChildren: () =>
-      import('./access/access.module').then((x) => x.AccessModule),
+      import('./access/access.module').then((x) => x.AccountModule),
   },
   {
     path: 'work-space',

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccessLayoutComponent } from './access-layout/access-layout.component';
 import { MaterialsModule } from 'src/app/core/modules/materials/materials.module';
 import { RouterModule } from '@angular/router';
+import { AccountLayoutComponent } from './account-layout/account-layout.component';
 
 
 
 @NgModule({
   declarations: [
-    AccessLayoutComponent
+    AccountLayoutComponent
   ],
   imports: [
     CommonModule,
@@ -16,4 +16,4 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
-export class AccessLayoutModule { }
+export class AccountLayoutModule { }

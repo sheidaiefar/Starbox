@@ -2,11 +2,11 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-access-layout',
-  templateUrl: './access-layout.component.html',
-  styleUrls: ['./access-layout.component.css']
+  selector: 'app-account-layout',
+  templateUrl: './account-layout.component.html',
+  styleUrls: ['./account-layout.component.css']
 })
-export class AccessLayoutComponent {
+export class AccountLayoutComponent {
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
