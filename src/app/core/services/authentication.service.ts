@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from 'src/app/core/models/user';
+import { User } from '../models/user';
+import { environment } from 'src/environments';
 
-import { environment } from '../../../../src/environments';
 
 
 @Injectable({ providedIn: 'root' })
-export class AccountService {
+export class AuthenticationService {
     private userSubject: BehaviorSubject<User | null>;
     public user: Observable<User | null>;
 
@@ -26,19 +26,19 @@ export class AccountService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
+        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));
-                this.userSubject.next(user);                
+                this.userSubject.next(user);
                 return user;
             }));
     }
 
     logout() {
-        // remove user from local storage and set current user to null
+        // remove user from local storage to log user out
         localStorage.removeItem('user');
         this.userSubject.next(null);
-        this.router.navigate(['/account/login']);
+        this.router.navigate(['/login']);
     }
 }
