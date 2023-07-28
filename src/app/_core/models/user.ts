@@ -5,10 +5,10 @@ export class User {
   firstName?: string;
   lastName?: string;
   token?: string;
-  folders?: Folder[];
+  collection?: Collection[];
 }
 
-export class Folder {
+export class Collection {
   id?: string;
   name?: string;
   genre?: 'Action' | 'Horror' | 'Romance' | 'Adventure';

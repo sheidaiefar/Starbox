@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Folder, User } from 'src/app/_core/models/user';
+import { Collection, User } from 'src/app/_core/models/user';
 import { UserService } from 'src/app/_core/services/user.service';
 
 @Component({
@@ -10,8 +10,8 @@ import { UserService } from 'src/app/_core/services/user.service';
 })
 export class PublicHomeComponent implements OnInit {
   users!: User[];
-  folders: Folder[] = [];
-  UserFolders?: Folder[] = [];
+  folders: Collection[] = [];
+  UserFolders?: Collection[] = [];
 
   constructor(private userService: UserService) {
     this.getUsers();
@@ -25,7 +25,7 @@ export class PublicHomeComponent implements OnInit {
     this.userService.getAll().subscribe((res) => {
       this.users = res;
       this.users.forEach((user) => {
-        if (user.folders) {
+        if (user.collection) {
           this.UserFolders = this.getFolder(user);
           this.UserFolders?.forEach((x) => {
             if (!this.folders.includes(x)) {
@@ -38,6 +38,6 @@ export class PublicHomeComponent implements OnInit {
   }
 
   getFolder(user: User) {
-    return user.folders;
+    return user.collection;
   }
 }
