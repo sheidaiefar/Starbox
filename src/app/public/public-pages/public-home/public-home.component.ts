@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from 'src/app/_core/models/user';
+import { Folder, User } from 'src/app/_core/models/user';
 import { UserService } from 'src/app/_core/services/user.service';
 
 @Component({
@@ -8,42 +8,36 @@ import { UserService } from 'src/app/_core/services/user.service';
   templateUrl: './public-home.component.html',
   styleUrls: ['./public-home.component.css'],
 })
-export class PublicHomeComponent {
-  users!: any;
+export class PublicHomeComponent implements OnInit {
+  users!: User[];
+  folders: Folder[] = [];
+  UserFolders?: Folder[] = [];
 
   constructor(private userService: UserService) {
     this.getUsers();
   }
 
+  ngOnInit(): void {
+    this.getUsers();
+  }
+
   getUsers() {
-    this.userService.getAll().subscribe((res) => {      
-      this.users=res;
-      console.log(this.users);
+    this.userService.getAll().subscribe((res) => {
+      this.users = res;
+      this.users.forEach((user) => {
+        if (user.folders) {
+          this.UserFolders = this.getFolder(user);
+          this.UserFolders?.forEach((x) => {
+            if (!this.folders.includes(x)) {
+              this.folders.push(x);
+            }
+          });
+        }
+      });
     });
   }
 
-  folders = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
-  notes = [
-    {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
-    },
-    {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
-    },
-  ];
+  getFolder(user: User) {
+    return user.folders;
+  }
 }

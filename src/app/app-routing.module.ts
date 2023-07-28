@@ -24,7 +24,7 @@ const routes: Routes = [
       import('./public/public.module').then((x) => x.PublicModule),
   },
   {
-    path: 'access',
+    path: 'account',
     component: AccountLayoutComponent,
     loadChildren: () =>
       import('./account/account.module').then((x) => x.AccountModule),
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '' },
+  // { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

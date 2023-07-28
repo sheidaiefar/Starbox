@@ -1,19 +1,10 @@
-<p>public-home works!</p>
-
-<div *ngFor="let x in users">{{x.username}}-</div>
-
 <mat-list>
-    <div mat-subheader>Folders</div>
+  <div mat-subheader>List Of The Movies</div>
     <mat-list-item *ngFor="let folder of folders">
-      <mat-icon matListItemIcon>folder</mat-icon>
-      <div matListItemTitle>{{folder.name}}</div>
-      <div matListItemLine>{{folder.updated | date}}</div>
+      <mat-icon matListItemIcon>movie</mat-icon>
+      <div matListItemTitle>{{ folder.name }}</div>
+      <div matListItemLine>{{ folder.genre }}</div>
+      <div matListItemLine>{{ folder.releaseDate | date }}</div>
     </mat-list-item>
-    <mat-divider></mat-divider>
-    <div mat-subheader>Notes</div>
-    <mat-list-item *ngFor="let note of notes">
-      <mat-icon matListItemIcon>note</mat-icon>
-      <div matListItemTitle>{{note.name}}</div>
-      <div matListItemLine>{{note.updated | date}}</div>
-    </mat-list-item>
-  </mat-list>
+
+</mat-list>

@@ -17,13 +17,21 @@ let users = [
     lastName: 'Sheidaiefar',
     username: 'sheyda888',
     password: '123',
+    folders:[
+      {name:'Alice in Wonderland', genre: 'Adventure' , releaseDate : new Date(1/1/2010)},
+      {name:'Talk To Me', genre: 'Romance' , releaseDate : new Date(1/1/2020)},
+    ]
   },
   {
     id: 2,
-    firstName: 'Chris',
+    firstName: 'Tina',
     lastName: 'Smith',
     username: 'smith',
     password: '123',
+    folders:[
+      {name:'Inception', genre: 'Adventure' , releaseDate : new Date(1/1/2011)},
+      {name:'Ax', genre: 'Horror' , releaseDate : new Date(1/1/2000)},
+    ]
   },
 ];
 
