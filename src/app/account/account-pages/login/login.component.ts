@@ -22,9 +22,9 @@ export class LoginComponent implements OnInit {
       private accountService: AccountService
   ) {
       // redirect to home if already logged in
-      if (this.accountService.userValue) {
-          this.router.navigate(['/']);
-      }
+    //   if (this.accountService.userValue) {
+    //       this.router.navigate(['/']);
+    //   }
   }
 
   ngOnInit() {

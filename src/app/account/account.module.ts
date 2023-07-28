@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AccountLayoutModule,
     AccountRoutingModule,
     ReactiveFormsModule,
-  ]
+  ],
+  exports:[ AccountLayoutModule]
 })
 export class AccountModule { }
