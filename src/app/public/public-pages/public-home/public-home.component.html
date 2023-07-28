@@ -1,5 +1,7 @@
 <p>public-home works!</p>
 
+<div *ngFor="let x in users">{{x.username}}-</div>
+
 <mat-list>
     <div mat-subheader>Folders</div>
     <mat-list-item *ngFor="let folder of folders">

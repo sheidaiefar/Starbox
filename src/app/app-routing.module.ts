@@ -35,6 +35,9 @@ const routes: Routes = [
     loadChildren: () =>
       import('./work-space/work-space.module').then((x) => x.WorkSpaceModule),
   },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

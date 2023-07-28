@@ -1,12 +1,27 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { User } from 'src/app/_core/models/user';
+import { UserService } from 'src/app/_core/services/user.service';
 
 @Component({
   selector: 'app-public-home',
   templateUrl: './public-home.component.html',
-  styleUrls: ['./public-home.component.css']
+  styleUrls: ['./public-home.component.css'],
 })
-
 export class PublicHomeComponent {
+  users!: any;
+
+  constructor(private userService: UserService) {
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.userService.getAll().subscribe((res) => {      
+      this.users=res;
+      console.log(this.users);
+    });
+  }
+
   folders = [
     {
       name: 'Photos',
@@ -30,5 +45,5 @@ export class PublicHomeComponent {
       name: 'Kitchen Remodel',
       updated: new Date('1/18/16'),
     },
-  ]
+  ];
 }
