@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './work-space-pages/content/home/home.component';
-import { AuthGuard } from '../core/auth/auth.guard';
+import { AuthGuard } from '../_core/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,    
+    component: HomeComponent,
     pathMatch: 'full',
+    canActivate: [AuthGuard],
   },
   {
     path: 'content',
