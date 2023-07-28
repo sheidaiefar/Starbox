@@ -54,8 +54,8 @@ export class LoginComponent implements OnInit {
           .subscribe({
               next: () => {
                   // get return url from query parameters or default to home page
-                  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                  this.router.navigateByUrl(returnUrl);
+                //   const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+                  this.router.navigateByUrl('work-space');
               },
               error: error => {
                 debugger

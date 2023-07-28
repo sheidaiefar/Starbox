@@ -8,9 +8,11 @@ import { WorkSpaceModule } from './work-space/work-space.module';
 import { PublicModule } from './public/public.module';
 import { AccountModule } from './account/account.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MaterialsModule } from './_core/modules/materials/materials.module';
 import { fakeBackendProvider } from './_core/auth/fake-backend';
+import { JwtInterceptor } from './_core/auth/jwt.interceptor';
+import { ErrorInterceptor } from './_core/auth/error.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,11 @@ import { fakeBackendProvider } from './_core/auth/fake-backend';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [fakeBackendProvider],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    fakeBackendProvider,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

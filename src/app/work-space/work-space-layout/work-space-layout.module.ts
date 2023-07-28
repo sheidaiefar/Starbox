@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { WorkSpaceLayoutComponent } from './work-space-layout/work-space-layout.component';
 import { RouterModule } from '@angular/router';
 import { MaterialsModule } from 'src/app/_core/modules/materials/materials.module';
+import { AccountService } from 'src/app/account/services/account.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MaterialsModule } from 'src/app/_core/modules/materials/materials.modul
     MaterialsModule, 
     RouterModule
   ],
+  providers:[AccountService],
   exports: [WorkSpaceLayoutComponent,HeaderComponent],
 })
 export class WorkSpaceLayoutModule {}
