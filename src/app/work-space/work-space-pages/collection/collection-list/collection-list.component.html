@@ -10,8 +10,13 @@
 <!--  </mat-autocomplete>-->
 
 <mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+  <mat-label>Search</mat-label>
+  <input
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="Name of Collection"
+    #input
+  />
 </mat-form-field>
 
 <mat-card class="card">
