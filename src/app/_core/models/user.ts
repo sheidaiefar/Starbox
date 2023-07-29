@@ -14,6 +14,7 @@ export class Collection {
   name?: string;
   genre?: 'Action' | 'Horror' | 'Romance' | 'Adventure';
   releaseDate?: string;
+  isMine?:boolean
 }
 
 export enum Role {
