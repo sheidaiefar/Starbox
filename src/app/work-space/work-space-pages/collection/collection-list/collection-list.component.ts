@@ -9,14 +9,14 @@ import { AuthenticationService } from '../../../../_core/services/authentication
   templateUrl: './collection-list.component.html',
   styleUrls: ['./collection-list.component.css'],
 })
-export class CollectionListComponent implements OnInit {
+export class CollectionListComponent {
   dataSource: Collection[] = [];
   displayedColumns: string[] = ['id', 'name', 'genre', 'releaseDate', 'edit'];
 
   @ViewChild(MatTable) table!: MatTable<Collection>;
   filteredList: Collection[] = [];
 
-  list = new MatTableDataSource(this.dataSource);
+  onFiltering = false;
 
   constructor(
     public userService: UserService,
@@ -24,11 +24,11 @@ export class CollectionListComponent implements OnInit {
     private cdf: ChangeDetectorRef
   ) {
     this.getValues();
+    if(this.onFiltering){
+      cdf.detach();
+    }
   }
 
-  ngOnInit() {
-    this.getValues();
-  }
 
   markForCheck() {
     this.cdf.markForCheck();
@@ -44,6 +44,7 @@ export class CollectionListComponent implements OnInit {
   }
 
   applyFilter(event: Event) {
+    this.onFiltering=true
     this.getValues();
     this.filteredList = [];
     const filterValue = this._normalizeValue(
@@ -55,8 +56,8 @@ export class CollectionListComponent implements OnInit {
         this._normalizeValue(movie.name).includes(filterValue)
       );
     }
-
-    return (this.dataSource = [...this.filteredList]);
+    this.dataSource = [...this.filteredList];
+    return this.dataSource;
   }
 
   _normalizeValue(value: string | undefined): string {

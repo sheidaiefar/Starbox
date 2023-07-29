@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './work-space-pages/content/home/home.component';
+import { RoleGuardService } from '../_core/auth/role-gaurd.service';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
-    // canActivate: [AuthGuard],
   },
-  // {
-  //   path: 'admin',
-  //   component: AdminComponent,
-  //   canActivate: [RoleGuard],
-  //   data: {
-  //     expectedRole: 'admin'
-  //   }
-  // },
+  {
+    path: 'admin',
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRole: 'admin'
+    },
+    loadChildren: () =>
+      import('./work-space-pages/admin/admin.module').then(
+        (x) => x.AdminModule
+      ),
+  },
   {
     path: 'content',
     loadChildren: () =>

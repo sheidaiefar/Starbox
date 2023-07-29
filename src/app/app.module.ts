@@ -12,6 +12,9 @@ import { MaterialsModule } from './_core/modules/materials/materials.module';
 import { fakeBackendProvider } from './_core/auth/fake-backend';
 import { JwtInterceptor } from './_core/auth/jwt.interceptor';
 import { ErrorInterceptor } from './_core/auth/error.interceptor';
+import { RoleGuardService } from './_core/auth/role-gaurd.service';
+import { AuthGuard } from './_core/auth/auth.guard';
+import { AuthenticationService } from './_core/services/authentication.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +30,9 @@ import { ErrorInterceptor } from './_core/auth/error.interceptor';
     HttpClientModule,
   ],
   providers: [
+    RoleGuardService,
+    AuthGuard,
+    AuthenticationService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     fakeBackendProvider,
