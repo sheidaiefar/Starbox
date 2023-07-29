@@ -1,10 +1,9 @@
 <mat-list>
   <div mat-subheader>List Of The Movies</div>
-    <mat-list-item *ngFor="let folder of folders">
-      <mat-icon matListItemIcon>movie</mat-icon>
-      <div matListItemTitle>{{ folder.name }}</div>
-      <div matListItemLine>{{ folder.genre }}</div>
-      <div matListItemLine>{{ folder.releaseDate | date }}</div>
-    </mat-list-item>
-
+  <mat-list-item *ngFor="let folder of folders">
+    <mat-icon matListItemIcon>movie</mat-icon>
+    <div matListItemTitle>{{ folder.name }}</div>
+    <div matListItemLine>{{ folder.genre }}</div>
+    <div matListItemLine>{{ folder.releaseDate | date }}</div>
+  </mat-list-item>
 </mat-list>

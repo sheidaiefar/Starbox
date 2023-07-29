@@ -6,7 +6,7 @@ export class User {
   lastName?: string;
   token?: string;
   collection?: Collection[];
-  roles:Role[]=[Role.Viewer];
+  roles: Role[] = [Role.Viewer];
 }
 
 export class Collection {
@@ -16,9 +16,7 @@ export class Collection {
   releaseDate?: string;
 }
 
-
 enum Role {
-    Admin = 'admin',
-  Viewer = 'viewer'
+  Admin = 'admin',
+  Viewer = 'viewer',
 }
-

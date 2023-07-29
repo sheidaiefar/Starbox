@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +12,6 @@ import { MaterialsModule } from './_core/modules/materials/materials.module';
 import { fakeBackendProvider } from './_core/auth/fake-backend';
 import { JwtInterceptor } from './_core/auth/jwt.interceptor';
 import { ErrorInterceptor } from './_core/auth/error.interceptor';
-import {AuthenticationService} from "./_core/services/authentication.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +29,7 @@ import {AuthenticationService} from "./_core/services/authentication.service";
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-     fakeBackendProvider
+    fakeBackendProvider,
   ],
   bootstrap: [AppComponent],
 })

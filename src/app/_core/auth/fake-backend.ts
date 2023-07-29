@@ -9,7 +9,7 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
-import {AuthenticationService} from "../services/authentication.service";
+import { AuthenticationService } from '../services/authentication.service';
 
 let users = [
   {
@@ -18,11 +18,19 @@ let users = [
     lastName: 'Sheidaiefar',
     username: 'sheyda888',
     password: '123',
-    roles:['admin','viewer'],
-    collection:[
-      {name:'Alice in Wonderland', genre: 'Adventure' , releaseDate : new Date(1/1/2010)},
-      {name:'Talk To Me', genre: 'Romance' , releaseDate : new Date(1/1/2020)},
-    ]
+    roles: ['admin', 'viewer'],
+    collection: [
+      {
+        name: 'Alice in Wonderland',
+        genre: 'Adventure',
+        releaseDate: new Date(1 / 1 / 2010),
+      },
+      {
+        name: 'Talk To Me',
+        genre: 'Romance',
+        releaseDate: new Date(1 / 1 / 2020),
+      },
+    ],
   },
   {
     id: 2,
@@ -30,17 +38,21 @@ let users = [
     lastName: 'Smith',
     username: 'tina',
     password: '123',
-    roles:['viewer'],
-    collection:[
-      {name:'Inception', genre: 'Adventure' , releaseDate : new Date(1/1/2011)},
-      {name:'Ax', genre: 'Horror' , releaseDate : new Date(1/1/2000)},
-    ]
+    roles: ['viewer'],
+    collection: [
+      {
+        name: 'Inception',
+        genre: 'Adventure',
+        releaseDate: new Date(1 / 1 / 2011),
+      },
+      { name: 'Ax', genre: 'Horror', releaseDate: new Date(1 / 1 / 2000) },
+    ],
   },
 ];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
-  public currentUser!:any;
+  public currentUser!: any;
 
   intercept(
     request: HttpRequest<any>,
@@ -58,10 +70,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         case url.endsWith('/userList') && method === 'GET':
           return userList();
 
-          case url.includes('/collectionList') && method === 'GET':
-            const urlArr = url.split('/',5);
-            const id = urlArr.pop();
-          return id ? collectionList(+id): next.handle(request);
+        case url.includes('/collectionList') && method === 'GET':
+          const urlArr = url.split('/', 5);
+          const id = urlArr.pop();
+          return id ? collectionList(+id) : next.handle(request);
 
         default:
           // pass through any requests not handled above
@@ -98,8 +110,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function basicDetails(user: any) {
-      const { id, username, firstName, lastName , roles } = user;
-      return { id, username, firstName, lastName , roles};
+      const { id, username, firstName, lastName, roles } = user;
+      return { id, username, firstName, lastName, roles };
     }
 
     //business functions
@@ -107,11 +119,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       return ok(users);
     }
 
-
-    function collectionList(id:number) {
-       const user = users.find(
-        (x) => x.id === id
-      );
+    function collectionList(id: number) {
+      const user = users.find((x) => x.id === id);
       return ok(user?.collection);
     }
   }

@@ -5,16 +5,13 @@ import { PublicLayoutModule } from './public-layout/public-layout.module';
 import { PublicRoutingModule } from './public-routing.module';
 import { MaterialsModule } from '../_core/modules/materials/materials.module';
 
-
 @NgModule({
-  declarations: [
-    PublicHomeComponent
-  ],
+  declarations: [PublicHomeComponent],
   imports: [
     CommonModule,
     PublicLayoutModule,
     MaterialsModule,
-    PublicRoutingModule
-  ]
+    PublicRoutingModule,
+  ],
 })
-export class PublicModule { }
+export class PublicModule {}

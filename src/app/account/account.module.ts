@@ -6,18 +6,14 @@ import { AccountLayoutModule } from './account-layout/account-layout.module';
 import { AccountRoutingModule } from './account-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [
-    LoginComponent,
-    SignupComponent
-  ],
+  declarations: [LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     AccountLayoutModule,
     AccountRoutingModule,
     ReactiveFormsModule,
   ],
-  exports:[ AccountLayoutModule]
+  exports: [AccountLayoutModule],
 })
-export class AccountModule { }
+export class AccountModule {}

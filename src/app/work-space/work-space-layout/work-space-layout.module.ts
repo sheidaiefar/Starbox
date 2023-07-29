@@ -13,12 +13,8 @@ import { AccountService } from 'src/app/account/services/account.service';
     WorkSpaceLayoutComponent,
     HeaderComponent,
   ],
-  imports: [
-    CommonModule, 
-    MaterialsModule, 
-    RouterModule
-  ],
-  providers:[AccountService],
-  exports: [WorkSpaceLayoutComponent,HeaderComponent],
+  imports: [CommonModule, MaterialsModule, RouterModule],
+  providers: [AccountService],
+  exports: [WorkSpaceLayoutComponent, HeaderComponent],
 })
 export class WorkSpaceLayoutModule {}

@@ -9,16 +9,17 @@
 <!--    </mat-option>-->
 <!--  </mat-autocomplete>-->
 
-
- <mat-form-field>
+<mat-form-field>
   <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
 </mat-form-field>
 
 <mat-card class="card">
   <mat-card-header class="card-header">
     <mat-card-title>
-        <button mat-raised-button><a [routerLink]="['./add']">Add Data</a> </button>
+      <button mat-raised-button>
+        <a [routerLink]="['./add']">Add Data</a>
+      </button>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content class="card-content">
@@ -45,10 +46,12 @@
         <td mat-cell *matCellDef="let element">{{ element.genre }}</td>
       </ng-container>
 
-            <!-- Release Date Column -->
+      <!-- Release Date Column -->
       <ng-container matColumnDef="releaseDate">
         <th mat-header-cell *matHeaderCellDef>Release Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.releaseDate | date }}</td>
+        <td mat-cell *matCellDef="let element">
+          {{ element.releaseDate | date }}
+        </td>
       </ng-container>
 
       <!-- edit Column -->
@@ -57,7 +60,6 @@
         <td mat-cell *matCellDef="let element">
           <button mat-icon-button aria-label="expand row">
             <mat-icon> edit</mat-icon>
-
           </button>
         </td>
       </ng-container>
@@ -66,10 +68,12 @@
         <td class="mat-cell" colspan="4">No data</td>
       </tr>
 
-        <!-- Row shown when there is no matching data. -->
-  <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-  </tr>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

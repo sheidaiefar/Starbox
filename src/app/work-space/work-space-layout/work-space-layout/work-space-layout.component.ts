@@ -4,7 +4,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 @Component({
   selector: 'app-work-space-layout',
   templateUrl: './work-space-layout.component.html',
-  styleUrls: ['./work-space-layout.component.css']
+  styleUrls: ['./work-space-layout.component.css'],
 })
 export class WorkSpaceLayoutComponent {
   mobileQuery: MediaQueryList;

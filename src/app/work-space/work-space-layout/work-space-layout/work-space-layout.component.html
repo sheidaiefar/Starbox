@@ -1,16 +1,24 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-     <work-space-header (menuToggle)="drawer.toggle()"></work-space-header> 
-      <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-       <mat-sidenav #drawer [position]="'start'" [mode]="mobileQuery.matches ? 'over' : 'side'"
-            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-            <work-space-menu></work-space-menu>
-        </mat-sidenav> 
-       <mat-sidenav-content>
-            <div class="card">
-                <div class="card-body router-outlet-container">
-                     <router-outlet></router-outlet>  
-                </div>
-            </div>
-        </mat-sidenav-content> 
-    </mat-sidenav-container>
+  <work-space-header (menuToggle)="drawer.toggle()"></work-space-header>
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #drawer
+      [position]="'start'"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <work-space-menu></work-space-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="card">
+        <div class="card-body router-outlet-container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
