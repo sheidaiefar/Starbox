@@ -1,4 +1,19 @@
-<p>collection-list works!</p>
+<!--  <input type="text"-->
+<!--         placeholder="Search for a movie"-->
+<!--         [formControl]="control"-->
+<!--         [matAutocomplete]="auto"-->
+<!--         class="example-input">-->
+<!--  <mat-autocomplete #auto="matAutocomplete">-->
+<!--    <mat-option *ngFor="let movie of collectionList | async" [value]="movie">-->
+<!--      {{movie}}-->
+<!--    </mat-option>-->
+<!--  </mat-autocomplete>-->
+
+
+ <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
 
 <mat-card class="card">
   <mat-card-header class="card-header">
@@ -50,6 +65,11 @@
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">No data</td>
       </tr>
+
+        <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

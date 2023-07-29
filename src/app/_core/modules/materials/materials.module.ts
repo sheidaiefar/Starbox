@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatTable, MatTableModule} from '@angular/material/table';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
 
 const matModules = [
   MatCardModule,
@@ -20,6 +22,8 @@ const matModules = [
   MatSelectModule,
   MatListModule,
   MatTableModule,
+  MatAutocompleteModule,
+  MatInputModule
 ];
 
 
