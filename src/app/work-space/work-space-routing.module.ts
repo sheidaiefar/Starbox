@@ -24,6 +24,13 @@ const routes: Routes = [
         (x) => x.ContentModule
       ),
   },
+    {
+    path: 'collection',
+    loadChildren: () =>
+      import('./work-space-pages/collection/collection.module').then(
+        (x) => x.CollectionModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -8,9 +8,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatTable, MatTableModule} from '@angular/material/table';
 
 const matModules = [
-  MatCardModule,  
+  MatCardModule,
   MatIconModule,
   MatButtonModule,
   MatToolbarModule,
@@ -18,6 +19,7 @@ const matModules = [
   MatFormFieldModule,
   MatSelectModule,
   MatListModule,
+  MatTableModule,
 ];
 
 
