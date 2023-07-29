@@ -17,6 +17,7 @@ let users = [
     lastName: 'Sheidaiefar',
     username: 'sheyda888',
     password: '123',
+    roles:['admin','viewer'],
     folders:[
       {name:'Alice in Wonderland', genre: 'Adventure' , releaseDate : new Date(1/1/2010)},
       {name:'Talk To Me', genre: 'Romance' , releaseDate : new Date(1/1/2020)},
@@ -26,8 +27,9 @@ let users = [
     id: 2,
     firstName: 'Tina',
     lastName: 'Smith',
-    username: 'smith',
+    username: 'tina',
     password: '123',
+    roles:['viewer'],
     folders:[
       {name:'Inception', genre: 'Adventure' , releaseDate : new Date(1/1/2011)},
       {name:'Ax', genre: 'Horror' , releaseDate : new Date(1/1/2000)},
@@ -93,7 +95,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     //business functions
-    function userList() {        
+    function userList() {
       return ok(users);
     }
   }

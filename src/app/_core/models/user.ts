@@ -6,6 +6,7 @@ export class User {
   lastName?: string;
   token?: string;
   collection?: Collection[];
+  roles:Role[]=[Role.Viewer];
 }
 
 export class Collection {
@@ -14,3 +15,10 @@ export class Collection {
   genre?: 'Action' | 'Horror' | 'Romance' | 'Adventure';
   releaseDate?: string;
 }
+
+
+enum Role {
+    Admin = 'admin',
+  Viewer = 'viewer'
+}
+

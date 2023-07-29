@@ -11,7 +11,9 @@ export class AuthenticationService {
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(
+    private router: Router,
+    private http: HttpClient,) {
     this.userSubject = new BehaviorSubject(
       JSON.parse(localStorage.getItem('user')!)
     );
@@ -43,5 +45,9 @@ export class AuthenticationService {
     localStorage.removeItem('user');
     this.userSubject.next(null);
     this.router.navigate(['/login']);
+  }
+
+    isAuthenticated(): boolean {
+     return this.userValue?.token ? true : false;
   }
 }

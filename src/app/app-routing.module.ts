@@ -4,6 +4,7 @@ import { PublicLayoutComponent } from './public/public-layout/public-layout/publ
 import { PublicHomeComponent } from './public/public-pages/public-home/public-home.component';
 import { WorkSpaceLayoutComponent } from './work-space/work-space-layout/work-space-layout/work-space-layout.component';
 import { AccountLayoutComponent } from './account/account-layout/account-layout/account-layout.component';
+import {AuthGuard} from "./_core/auth/auth.guard";
 
 const routes: Routes = [
   {
@@ -31,13 +32,14 @@ const routes: Routes = [
   },
   {
     path: 'work-space',
+    canActivate: [AuthGuard],
     component: WorkSpaceLayoutComponent,
     loadChildren: () =>
       import('./work-space/work-space.module').then((x) => x.WorkSpaceModule),
   },
 
   // otherwise redirect to home
-  // { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -9,6 +9,14 @@ const routes: Routes = [
     pathMatch: 'full',
     // canActivate: [AuthGuard],
   },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   canActivate: [RoleGuard],
+  //   data: {
+  //     expectedRole: 'admin'
+  //   }
+  // },
   {
     path: 'content',
     loadChildren: () =>
