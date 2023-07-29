@@ -16,7 +16,7 @@ export class Collection {
   releaseDate?: string;
 }
 
-enum Role {
+export enum Role {
   Admin = 'admin',
   Viewer = 'viewer',
 }

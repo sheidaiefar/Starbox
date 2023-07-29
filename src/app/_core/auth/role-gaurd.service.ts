@@ -4,7 +4,10 @@ import { AuthenticationService } from '../services/authentication.service';
 
 @Injectable()
 export class RoleGuardService implements CanActivate {
-  constructor(public auth: AuthenticationService, public router: Router) {}
+  constructor(
+    public auth: AuthenticationService,
+    public router: Router
+    ) {}
   canActivate(route: ActivatedRouteSnapshot): boolean {
     // this will be passed from the route config
     // on the data property
