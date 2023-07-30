@@ -12,7 +12,7 @@ import { UserService } from 'src/app/_core/services/user.service';
 export class HomeComponent {
   dataSource:any = [];
   list: any = [];
-  displayedColumns: string[] = ['id', 'name', 'genre', 'releaseDate', 'edit'];
+  displayedColumns: string[] = [ 'name', 'genre', 'releaseDate', 'edit'];
   @ViewChild(MatTable) table!: MatTable<Collection>;
 
   constructor(
@@ -25,20 +25,22 @@ export class HomeComponent {
   getValues() {
     this.userService.getAll().subscribe((res) => {
       let users = res;
-      let currentUser = this.auth.userValue;
       users.forEach((user) => {
         user.collection?.forEach((item) => {
           this.list.push(item);
-          debugger
-          if(user == currentUser ){
-            item.isMine=true;
-          }
         });
 
       });
       this.dataSource = [...this.list];
     });
-    
+  }
+
+  isMine(item:Collection){
+       let currentUser = this.auth.userValue;
+            if(item.owner == currentUser?.id ){
+            return true
+          }
+            return false;
   }
 
 }

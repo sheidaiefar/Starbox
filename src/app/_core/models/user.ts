@@ -1,5 +1,5 @@
 export class User {
-  id!: string;
+  id!: number;
   username?: string;
   password?: string;
   firstName?: string;
@@ -14,7 +14,7 @@ export class Collection {
   name?: string;
   genre?: 'Action' | 'Horror' | 'Romance' | 'Adventure';
   releaseDate?: string;
-  isMine?:boolean
+  owner!:number // user.id
 }
 
 export enum Role {

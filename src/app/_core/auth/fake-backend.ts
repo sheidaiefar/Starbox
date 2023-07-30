@@ -24,11 +24,13 @@ let users = [
         name: 'Alice in Wonderland',
         genre: 'Adventure',
         releaseDate: new Date(1 / 1 / 2010),
+        owner:1,
       },
       {
         name: 'Talk To Me',
         genre: 'Romance',
         releaseDate: new Date(1 / 1 / 2020),
+        owner:1,
       },
     ],
   },
@@ -44,8 +46,9 @@ let users = [
         name: 'Inception',
         genre: 'Adventure',
         releaseDate: new Date(1 / 1 / 2011),
+        owner:2,
       },
-      { name: 'Ax', genre: 'Horror', releaseDate: new Date(1 / 1 / 2000) },
+      { name: 'Ax', genre: 'Horror', releaseDate: new Date(1 / 1 / 2000),owner:2, }
     ],
   },
 ];
