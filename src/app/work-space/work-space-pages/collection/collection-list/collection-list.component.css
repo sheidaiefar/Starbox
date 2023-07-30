@@ -12,3 +12,8 @@
   max-width: 100%;
   width: 300px;
 }
+
+add-button{
+  position: absolute;
+  left: 2rem;
+}

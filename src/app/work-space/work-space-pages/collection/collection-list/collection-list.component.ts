@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { Collection } from '../../../../_core/models/user';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { UserService } from '../../../../_core/services/user.service';
@@ -11,7 +11,7 @@ import { AuthenticationService } from '../../../../_core/services/authentication
 })
 export class CollectionListComponent {
   dataSource: Collection[] = [];
-  displayedColumns: string[] = ['id', 'name', 'genre', 'releaseDate', 'edit'];
+  displayedColumns: string[] = [ 'name', 'genre', 'releaseDate', 'edit'];
 
   @ViewChild(MatTable) table!: MatTable<Collection>;
   filteredList: Collection[] = [];
