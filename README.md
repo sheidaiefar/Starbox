@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 
-I used a fake-backend service at this project which can handele API's.
+I used a fake-backend service at this project which can handel API's.
 
 After getting the project and installing libraries ( npm i) and running it `ng serve` , 
 you will see a Home page on (localhost address):
