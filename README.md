@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
+
+I used a fake-backend service at this project which can handele API's.
+
+After getting the project and installing libraries ( npm i) and running it `ng serve` , 
+you will see a Home page on (localhost address):
+
+At the (right of header) you see an icon to login page (localhost/account) ;
+
+If you want to have the role of Admin please use of these login information : { user: sheyda888 , password: 123 }
+
+If you want to have the role of Viewer please use of these login information : { user: tina , password: 123 }
+
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
