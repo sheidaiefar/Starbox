@@ -16,22 +16,12 @@ export class CollectionListComponent {
   @ViewChild(MatTable) table!: MatTable<Collection>;
   filteredList: Collection[] = [];
 
-  onFiltering = false;
-
   constructor(
     public userService: UserService,
     public auth: AuthenticationService,
     private cdf: ChangeDetectorRef
   ) {
     this.getValues();
-    if(this.onFiltering){
-      cdf.detach();
-    }
-  }
-
-
-  markForCheck() {
-    this.cdf.markForCheck();
   }
 
   getValues() {
@@ -44,12 +34,14 @@ export class CollectionListComponent {
   }
 
   applyFilter(event: Event) {
-    this.onFiltering=true
-    this.getValues();
     this.filteredList = [];
     const filterValue = this._normalizeValue(
       (event.target as HTMLInputElement).value
     );
+
+    if(filterValue.length==0){
+       this.getValues();
+    }
 
     if (this.dataSource.length > 1) {
       this.filteredList = this.dataSource.filter((movie) =>
