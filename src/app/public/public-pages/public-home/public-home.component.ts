@@ -9,6 +9,7 @@ import { UserService } from 'src/app/_core/services/user.service';
   styleUrls: ['./public-home.component.css'],
 })
 export class PublicHomeComponent implements OnInit {
+  imageUrl="./../../../assets/Films.jpg"
   users!: User[];
   folders: Collection[] = [];
   UserFolders?: Collection[] = [];
