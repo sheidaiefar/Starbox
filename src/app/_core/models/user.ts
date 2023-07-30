@@ -10,7 +10,7 @@ export class User {
 }
 
 export class Collection {
-  id?: string;
+  id?: number;
   name?: string;
   genre?: 'Action' | 'Horror' | 'Romance' | 'Adventure';
   releaseDate?: string;
