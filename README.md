@@ -3,9 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 
-I (Malihe Sheidaiefar) built an API for a movie collection.
+I (Malihe Sheidaiefar) built an API system for a movie collection.
 
-A fake-backend service at this project which can handel API's.
+Frontend is implemented by Angular 15 ,also a fake-backend service by Angular at this project which can handel API's.
 
 When user authenticates, JWT token is returned.
 
